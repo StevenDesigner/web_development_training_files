@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Talking Animal Quotes 🐾</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Comic Sans MS, cursive;
+        }
+
+        body {
+            background-color: #f5f5dc;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #page-title {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .intro {
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .animal-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .animal {
+            background-color: #fff;
+            padding: 15px;
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            width: 220px;
+            transition: transform 0.3s;
+        }
+
+        .animal:hover {
+            transform: scale(1.05);
+            border-color: #ff69b4;
+            background-color: #fff8dc;
+        }
+
+        .animal img {
+            width: 200px;
+            height: 200px;
+            border-radius: 5px;
+        }
+
+        .quote {
+            margin-top: 10px;
+            color: #333;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="page-title">🦜 Talking Animal Quotes</h1>
+    <p class="intro">Hover over the animals to see what they’re saying!</p>
+
+    <div class="animal-list">
+
+        <div class="animal">
+            <img src="https://placekitten.com/200/200" alt="Kitten">
+            <p class="quote">"I demand snacks... or I nap!"</p>
+        </div>
+
+        <div class="animal">
+            <img src="https://placebear.com/200/200" alt="Bear">
+            <p class="quote">"Don't poke the bear. I’m on vacation!"</p>
+        </div>
+
+        <div class="animal">
+            <img src="https://place-puppy.com/200x200" alt="Puppy">
+            <p class="quote">"I bark, therefore I am!"</p>
+        </div>
+
+    </div>
+
+    <p class="footer">Created by your favorite zoo comedian 🦁</p>
+
+</body>
+
+</html>

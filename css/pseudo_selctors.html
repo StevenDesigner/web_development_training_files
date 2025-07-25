@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Pseudo-class selectors */
+    a:hover {
+      color: red;
+      text-decoration: underline;
+    }
+
+    li:first-child {
+      background-color: #e0e0e0;
+    }
+
+    input:focus {
+      background-color: #ffffcc;
+    }
+
+    /* Pseudo-element selectors */
+    p::first-letter {
+      font-size: 200%;
+      color: blue;
+    }
+
+    p::after {
+      content: " ← End of paragraph";
+      color: green;
+      font-size: 80%;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Pseudo Selectors Example</h1>
+  <p>This is a sample paragraph to show pseudo-elements.</p>
+  <ul>
+    <li>First item (highlighted with :first-child)</li>
+    <li>Second item</li>
+  </ul>
+  <a href="#">Hover over this link</a>
+  <br><br>
+  <input type="text" placeholder="Focus me!">
+
+  </body>
+</html>
