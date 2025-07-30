@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flexbox Playground</title>
+  <style>
+    .container {
+      display: flex;
+      flex-direction: row;        /* row | column | row-reverse | column-reverse */
+      justify-content: space-between; /* start | end | center | space-between | space-around | space-evenly */
+      align-items: center;        /* stretch | center | start | end | baseline */
+      flex-wrap: wrap;            /* wrap | nowrap | wrap-reverse */
+      gap: 20px;
+      height: 300px;
+      padding: 20px;
+      background: #f0f0f0;
+      border: 2px solid #aaa;
+    }
+
+    .item {
+      background: #4a90e2;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+      flex: 1 1 150px;  /* grow shrink basis */
+    }
+
+    .item:nth-child(2) {
+      flex-grow: 2;         /* Will grow twice as much */
+      align-self: flex-start; /* Overrides align-items */
+    }
+
+    .item:nth-child(3) {
+      order: -1;            /* Will appear first */
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align:center;">Flexbox Example with All Properties</h2>
+
+  <div class="container">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2 (Grow More)</div>
+    <div class="item">Item 3 (Ordered First)</div>
+    <div class="item">Item 4</div>
+  </div>
+
+</body>
+</html>

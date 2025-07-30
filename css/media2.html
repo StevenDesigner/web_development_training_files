@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Responsive Joke</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background: #fffbe7;
+    }
+
+    .joke {
+      font-size: 20px;
+      font-weight: bold;
+      padding: 20px;
+    }
+
+    /* Desktop */
+    .joke::after {
+      content: "Why do programmers prefer dark mode? Because light attracts bugs!";
+    }
+
+    /* Tablet */
+    @media (max-width: 768px) {
+      .joke::after {
+        content: "Why don’t Java developers wear glasses? Because they can C#!";
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 480px) {
+      .joke::after {
+        content: "What’s a CSS developer’s favorite drink? JavaScript Tea 🍵";
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Screen Size = New Joke 😎</h2>
+  <div class="joke">sssss</div>
+
+</body>
+</html>

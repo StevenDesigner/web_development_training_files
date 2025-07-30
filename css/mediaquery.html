@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .container {
+      display: flex;
+      gap: 20px;
+    }
+
+    .box {
+      flex: 1;
+      padding: 20px;
+      background-color: lightgreen;
+      text-align: center;
+    }
+
+    /* Stack boxes on small screens */
+    @media (max-width: 600px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="box">Box 1</div>
+    <div class="box">Box 2</div>
+  </div>
+
+</body>
+</html>
