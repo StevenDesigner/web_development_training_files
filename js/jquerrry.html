@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Test</title>
+  <style>
+    #box {
+      width: 200px;
+      height: 200px;
+      background: skyblue;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>jQuery Demo</h1>
+<button id="toggleBtn">Toggle Box</button>
+<button id="textBtn">Change Text</button>
+
+<div id="box">Hello Box!</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(function() {
+    $("#toggleBtn").click(function() {
+      $("#box").toggle();
+    });
+
+    $("#textBtn").click(function() {
+      $("#box").html("🎉 jQuery is Fun!");
+    });
+  });
+</script>
+
+</body>
+</html>

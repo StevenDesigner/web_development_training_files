@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>🎲 Dice Game</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: sans-serif;
+      margin-top: 50px;
+    }
+
+    .dice {
+      font-size: 100px;
+      margin: 20px;
+    }
+
+    .winner {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 20px;
+      color: green;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎲 Dice Game</h1>
+  <div>
+    <div id="player1" class="dice">⚀</div>
+    <div id="player2" class="dice">⚀</div>
+  </div>
+  <button onclick="rollDice()">Roll Dice</button>
+
+  <div id="result" class="winner"></div>
+
+  <script>
+    const diceFaces = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
+
+    function rollDice() {
+      let roll1 = Math.floor(Math.random() * 6);
+      let roll2 = Math.floor(Math.random() * 6);
+
+      document.getElementById("player1").textContent = diceFaces[roll1];
+      document.getElementById("player2").textContent = diceFaces[roll2];
+
+      if (roll1 > roll2) {
+        document.getElementById("result").textContent = "🚩 Player 1 Wins!";
+      } else if (roll2 > roll1) {
+        document.getElementById("result").textContent = "Player 2 Wins! 🚩";
+      } else {
+        document.getElementById("result").textContent = "It's a Draw! 🎯";
+      }
+    }
+  </script>
+
+</body>
+</html>
