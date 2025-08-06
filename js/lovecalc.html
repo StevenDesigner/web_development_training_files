@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Love Calculator 💖</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+      background: #ffe0e9;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      border-radius: 5px;
+      border: none;
+      font-size: 1em;
+    }
+    button {
+      background-color: #ff4081;
+      color: white;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 1.3em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💘 Love Calculator 💘</h1>
+
+  <input id="yourName" placeholder="Your name" />
+  <input id="crushName" placeholder="Crush's name" />
+  <br>
+  <button onclick="calculateLove()">Check Love ❤️</button>
+
+  <div class="result" id="result"></div>
+
+  <script>
+    function calculateLove() {
+      let name1 = document.getElementById("yourName").value;
+      let name2 = document.getElementById("crushName").value;
+      let loveScore = Math.floor(Math.random() * 100) + 1;
+
+      let message = `💘 ${name1} ❤️ ${name2}<br>Your love score is: <strong>${loveScore}%</strong><br>`;
+
+      if (loveScore > 80) {
+        message += "🔥 You’re soulmates!";
+      } else if (loveScore > 50) {
+        message += "😊 A sweet match!";
+      } else if (loveScore > 30) {
+        message += "😅 There’s a spark… maybe?";
+      } else {
+        message += "💔 Just friends (maybe).";
+      }
+
+      document.getElementById("result").innerHTML = message;
+    }
+  </script>
+
+</body>
+</html>

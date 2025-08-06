@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Game</title>
+</head>
+<body>
+
+<script>
+  alert("Welcome to the Mini Quiz Game!");
+
+  let score = 0;
+  let totalQuestions = 3;
+
+  // Question 1
+  let q1 = prompt("1. What is the capital of India?");
+  if (q1.toLowerCase() === "delhi") {
+    alert("✅ Correct!");
+    score++;
+  } else {
+    alert("❌ Oops! The correct answer is Delhi.");
+  }
+
+  // Question 2
+  let q2 = prompt("2. What is 5 + 3?");
+  if (q2 === "8") {
+    alert("✅ Correct!");
+    score++;
+  } else {
+    alert("❌ Nope! It's 8.");
+  }
+
+  // Question 3
+  let q3 = prompt("3. What is the color of the sky on a clear day?");
+  if (q3.toLowerCase() === "blue") {
+    alert("✅ Well done!");
+    score++;
+  } else {
+    alert("❌ It's usually blue!");
+  }
+
+  alert("🎯 You got " + score + " out of " + totalQuestions + " correct!");
+
+  // Ask to play again
+  let again = confirm("Do you want to play again?");
+  if (again) {
+    location.reload(); // refreshes the page
+  } else {
+    alert("Thanks for playing!");
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<script>
+
+    let userAge = prompt("Enter your age:");
+    lifeInWeeks(userAge);
+
+    function lifeInWeeks(age) {
+        const maxAge = 90;
+        const yearsRemaining = maxAge - age;
+
+        const daysLeft = yearsRemaining * 365;
+        const weeksLeft = yearsRemaining * 52;
+        const monthsLeft = yearsRemaining * 12;
+
+        console.log("🧮 You have:");
+        console.log(daysLeft + " days left 😱");
+        console.log(weeksLeft + " weeks left 🗓️");
+        console.log(monthsLeft + " months left 📅");
+    }
+
+
+    // lifeInWeeks(25);
+</script>

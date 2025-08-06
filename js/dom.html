@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Fun Demo</title>
+  <style>
+    #myList {
+      padding: 10px;
+      border: 2px dashed gray;
+      width: 300px;
+    }
+    .highlight {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 id="title">🎉 Welcome to DOM Playground</h2>
+
+  <ul id="myList">
+    <li>Item 1</li>
+    <li>Item 2</li>
+  </ul>
+
+  <button id="addBtn">Add New Item</button>
+
+  <script>
+    // Access element by ID and change innerHTML
+    const title = document.getElementById("title");
+    title.innerHTML = "🛠️ DOM Demo - Click the Button!";
+
+    // Change style
+    title.style.color = "blue";
+    title.style.fontSize = "24px";
+
+    // Access list and first child
+    const myList = document.getElementById("myList");
+    const firstItem = myList.firstChild;
+    console.log("First Child (may be text node):", firstItem);
+
+    // Click event
+    document.getElementById("addBtn").onclick = function () {
+      // Create new list item
+      const newItem = document.createElement("li");
+      newItem.textContent = "New Item " + Math.floor(Math.random() * 100);
+
+      // Set attribute
+      newItem.setAttribute("class", "highlight");
+
+      // Append child to the list
+      myList.appendChild(newItem);
+    };
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BMI Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #333;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    input {
+      padding: 10px;
+      width: 80%;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <h1>🥦 BMI Calculator</h1>
+  <div class="container">
+    <input type="number" id="weight" placeholder="Enter weight (kg)" /><br>
+    <input type="number" id="height" placeholder="Enter height (m)" step="0.01"/><br>
+    <button onclick="calculateBMI()">Calculate BMI</button>
+    <div class="result" id="output"></div>
+  </div>
+
+  <script>
+    function calculateBMI() {
+      const weight = parseFloat(document.getElementById("weight").value);
+      const height = parseFloat(document.getElementById("height").value);
+      const output = document.getElementById("output");
+
+      if (!weight || !height || height <= 0) {
+        output.innerHTML = "🚫 Please enter valid weight and height.";
+        return;
+      }
+
+      const bmi = weight / (height * height);
+      let message = "🧮 Your BMI is " + bmi.toFixed(2) + "<br>";
+
+      if (bmi < 18.5) {
+        message += "⚠️ Underweight. Time for snacks? 🍔";
+      } else if (bmi < 25) {
+        message += "✅ Normal weight. Keep it up! 💪";
+      } else if (bmi < 30) {
+        message += "⚠️ Overweight. Maybe ease on cake? 🎂";
+      } else {
+        message += "🚨 Obese level! Time to hug a salad 🥗";
+      }
+
+      output.innerHTML = message;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Demo</title>
+  <style>
+    .color-box {
+      width: 100px;
+      height: 100px;
+      background-color: gray;
+      margin: 10px;
+    }
+    .red {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="title">Welcome</h1>
+  <p class="message">Hello!</p>
+  <div class="color-box" id="box1"></div>
+  <button onclick="changeText()">Change Text</button>
+  <button onclick="changeStyle()">Change Style</button>
+  <button onclick="addPara()">Add Paragraph</button>
+  <button onclick="replacePara()">Replace Paragraph</button>
+  <button onclick="toggleClass()">Toggle Red</button>
+
+  <script>
+    // 1. getElementById()
+    function changeText() {
+      let title = document.getElementById("title");
+      title.innerText = "You clicked!";
+    }
+
+    // 2. style, className, classList
+    function changeStyle() {
+      let box = document.getElementById("box1");
+      box.style.border = "3px solid black";         // style
+      box.className = "color-box red";              // className
+    }
+
+    // 3. innerHTML, createElement, appendChild
+    function addPara() {
+      let newP = document.createElement("p");         // createElement
+      newP.innerHTML = "✨ A new paragraph appeared!"; // innerHTML
+      document.body.appendChild(newP);                // appendChild
+    }
+
+    // 4. replaceChild
+    function replacePara() {
+      let oldP = document.querySelector(".message");
+      let newP = document.createElement("p");
+      newP.textContent = "🌀 This replaced the old paragraph!";
+      oldP.parentNode.replaceChild(newP, oldP);        // replaceChild
+    }
+
+    // 5. classList toggle
+    function toggleClass() {
+      let box = document.getElementById("box1");
+      box.classList.toggle("red");                    // classList.toggle
+    }
+
+    // 6. getAttribute, setAttribute
+    let btn = document.querySelector("button");
+    console.log("Button type is:", btn.getAttribute("type"));  // getAttribute
+    btn.setAttribute("title", "This is a button");             // setAttribute
+
+    // 7. DOM navigation
+    const body = document.body;
+    console.log("First child of body:", body.firstChild);         // firstChild
+    console.log("Children of body:", body.children);              // children
+
+    // 8. Event Listener
+    document.getElementById("box1").addEventListener("click", () => {
+      alert("🧱 You clicked the box!");
+    });
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Funny Nickname Generator</title>
+</head>
+<body>
+
+<script>
+  // Ask for user's name
+  let realName = prompt("What's your first name?");
+
+  // Array of funny prefixes
+  let funnyPrefixes = [
+    "Captain", "Sir", "Professor", "Crazy", "Dizzy", "Fluffy",
+    "Mega", "Ultra", "Silly", "Dr.", "Lazy", "Wacky"
+  ];
+
+  // Array of funny suffixes
+  let funnySuffixes = [
+    "Banana", "Nugget", "Toothbrush", "Sloth", "Potato", "Snail", "Pancake", "Burger", "Pickle", "Penguin"
+  ];
+
+  // Pick random ones
+  let prefix = funnyPrefixes[Math.floor(Math.random() * funnyPrefixes.length)];
+  let suffix = funnySuffixes[Math.floor(Math.random() * funnySuffixes.length)];
+
+  // Generate nickname
+  let nickname = prefix + " " + realName + " " + suffix;
+
+  // Show the result
+  alert("🎉 Your funny nickname is: " + nickname);
+</script>
+
+</body>
+</html>
